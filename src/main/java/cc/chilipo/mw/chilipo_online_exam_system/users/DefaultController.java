@@ -16,10 +16,10 @@ public class DefaultController {
 
     @RequestMapping(value = "/users", method = RequestMethod.GET)
     public String getUser() {
-        return "Hello Userr";
+        return "welcome here";
     }
 
-    @RequestMapping(value = "/users", method = RequestMethod.POST)
+   /* @RequestMapping(value = "/users", method = RequestMethod.POST)
     public User createUser(@RequestBody User user) {
         User object = new User();
         object.setEmail(user.getEmail());
@@ -30,5 +30,5 @@ public class DefaultController {
         object.setPhoneNumber(user.getPhoneNumber());
 
         return defaultRepository.save(object);
-    }
+    }*/
 }

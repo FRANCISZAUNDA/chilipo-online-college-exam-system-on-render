@@ -13,11 +13,11 @@ import javax.persistence.*;
 @Setter
 @Getter
 //@Entity
-@Table(name = "users")
+//@Table(name = "users")
 @MappedSuperclass
 public abstract class User {
     @GeneratedValue(strategy = GenerationType.AUTO)
-    protected @JsonIgnore @Id Long id;
+    private @JsonIgnore @Id Long id;
 
     @Column(unique = true, nullable = false)
     protected String username;

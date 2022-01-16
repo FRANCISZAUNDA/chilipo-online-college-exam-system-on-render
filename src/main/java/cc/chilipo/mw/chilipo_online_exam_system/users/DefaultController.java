@@ -11,17 +11,17 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class DefaultController {
 
-    @Autowired
-    private DefaultRepository defaultRepository;
+      @Autowired
+      private DefaultRepository defaultRepository;
 
     @RequestMapping(value = "/users", method = RequestMethod.GET)
     public String getUser() {
         return "welcome here";
     }
 
-   /* @RequestMapping(value = "/users", method = RequestMethod.POST)
-    public User createUser(@RequestBody User user) {
-        User object = new User();
+  // @RequestMapping(value = "/users", method = RequestMethod.POST)
+   /* public User createUser(@RequestBody User user) {
+        //User object = new User();
         object.setEmail(user.getEmail());
         object.setPassword(user.getPassword());
         object.setFirstname(user.getFirstname());

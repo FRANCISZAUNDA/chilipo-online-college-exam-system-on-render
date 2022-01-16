@@ -1,10 +1,12 @@
 package cc.chilipo.mw.chilipo_online_exam_system.admin;
 
 import cc.chilipo.mw.chilipo_online_exam_system.users.User;
+import cc.chilipo.mw.chilipo_online_exam_system.lectures.Lecture;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -14,13 +16,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "admin")
 public class Admin extends User {
-   // @GeneratedValue(strategy = GenerationType.AUTO)
-   // private @JsonIgnore @Id Long Student_id;
-
-
-    private double gpa;
-
-
+  private double age;
 
     public Admin(String username, String email, String firstname, String lastname) {
         this.username = username;
@@ -28,4 +24,5 @@ public class Admin extends User {
         this.firstname = firstname;
         this.lastname = lastname;
     }
+
 }

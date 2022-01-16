@@ -12,19 +12,4 @@ public class DepartmentController {
     @Autowired
     private DepartmentRepository departmentRepository;
 
-    @RequestMapping(value = "/departments", method = RequestMethod.GET)
-    public String getUser() {
-        return "welcome department";
-    }
-
-    @RequestMapping(value = "/departments", method = RequestMethod.POST)
-    public Department createDepartment(@RequestBody Department department) {
-        Department object = new Department();
-        object.setDept_name(department.getDept_name());
-        object.setDean(department.getDean());
-        object.setBuilding(department.getBuilding());
-        object.setRoom(department.getRoom());
-
-        return departmentRepository.save(object);
-    }
 }

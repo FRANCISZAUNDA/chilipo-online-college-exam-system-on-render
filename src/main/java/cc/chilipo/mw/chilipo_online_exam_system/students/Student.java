@@ -1,5 +1,6 @@
 package cc.chilipo.mw.chilipo_online_exam_system.students;
 
+import cc.chilipo.mw.chilipo_online_exam_system.exams.Exam;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
@@ -18,12 +19,13 @@ import java.util.List;
 @Entity
 @Table(name = "students")
 public class Student extends cc.chilipo.mw.chilipo_online_exam_system.users.User {
-    @GeneratedValue(strategy = GenerationType.AUTO)
-   // private @JsonIgnore @Id Long Student_id;
+    //@GeneratedValue(strategy = GenerationType.AUTO)
+    //private @JsonIgnore @Id Long Student_id;
     @OneToOne
     private  Department department;
     @OneToMany
     private List<Course> courses;
+
     private double gpa;
 
 

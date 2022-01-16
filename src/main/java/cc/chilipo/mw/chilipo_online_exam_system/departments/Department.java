@@ -14,8 +14,6 @@ import javax.persistence.*;
 @Table(name = "departments")
 public class Department {
     @GeneratedValue(strategy = GenerationType.AUTO)
-   // @OneToMany(cascade = CascadeType.ALL)
-   // @JoinColumn(name="dept_id")
     protected @JsonIgnore @Id Long dept_id;
 
     @Column(unique = true, nullable = false)

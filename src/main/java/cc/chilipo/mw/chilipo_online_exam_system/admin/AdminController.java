@@ -13,6 +13,8 @@ import cc.chilipo.mw.chilipo_online_exam_system.exams.ExamRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.applet.Applet;
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -20,11 +22,17 @@ public class AdminController {
 
     @Autowired
     private AdminRepository adminRepository;
+    @Autowired
     private  LectureRepository lectureRepository;
+    @Autowired
     private  CourseRepository courseRepository;
+    @Autowired
     private  DepartmentRepository departmentRepository;
+    @Autowired
     private  StudentRepository studentRepository;
-    private  ExamRepository    examRepository;
+    @Autowired
+    private  ExamRepository     examRepository;
+
 
     //--------functions----------what can admin do to himself
     @RequestMapping(value = "/admin", method = RequestMethod.GET)
@@ -41,6 +49,7 @@ public class AdminController {
         object.setLastname(admin.getLastname());
         object.setUsername(admin.getUsername());
         object.setPhoneNumber(admin.getPhoneNumber());
+        object.setAge(admin.getAge());
 
         return adminRepository.save(object);
     }
@@ -57,7 +66,11 @@ public Admin updateAdmin(@RequestBody Admin admin)
         return "please register lectures";
     }
 
-    //this for registering lectures
+
+/*the admin will register lecture set them all fields including password and give login info to the
+lecture via face to face,email,sms or call but the lecture will be advised to change the password this is to
+not let anyone register as a lecture
+ */
     @RequestMapping(value = "/admin/manage_lectures", method = RequestMethod.POST)
     public Lecture createLecture(@RequestBody Lecture lecture) {
         Lecture object = new Lecture();
@@ -67,9 +80,12 @@ public Admin updateAdmin(@RequestBody Admin admin)
         object.setLastname(lecture.getLastname());
         object.setUsername(lecture.getUsername());
         object.setPhoneNumber(lecture.getPhoneNumber());
+        object.setAge(lecture.getAge());
 
         return lectureRepository.save(object);
     }
+
+
 
     // this is for deleting lectures
     @RequestMapping(value = "admin/manage_lectures/{id}",method = RequestMethod.DELETE)
@@ -83,15 +99,14 @@ public Admin updateAdmin(@RequestBody Admin admin)
 //---------------end of lecture functions-----------------------------------------------------
 
 //------------------Admin functions with courses-----------------------------------------------
+
     //this will help admin register courses
-
-    @RequestMapping(value = "admin/manage_courses", method = RequestMethod.POST)
-    public Course createCourse(@RequestBody Course course) {
-        Course object = new Course();
-        object.setCourse_name(course.getCourse_name());
-        object.setDept_id(course.getDept_id());
-
-        return courseRepository.save(object);
+    @RequestMapping(value = "admin/manage_courses/{course_name}/{dept_id}", method = RequestMethod.PUT)
+    public Course createCourse(@PathVariable String course_name, @PathVariable Long dept_id){
+        Course object =new Course();
+        object.setCourse_name(course_name);
+        object.setDepartment(departmentRepository.findById(dept_id).get());
+      return   courseRepository.save(object);
     }
 
     // this is for deleting courses
@@ -118,7 +133,7 @@ public Admin updateAdmin(@RequestBody Admin admin)
     }
 
     // this to delete departments
-    @RequestMapping(value = "admin/manage_departments/{id}",method = RequestMethod.DELETE)
+    @RequestMapping(value = "admin/manage_departments/delete/{dept_id}",method = RequestMethod.DELETE)
     public  String removeDepartments(@PathVariable Long dept_id)
     {
         Department a = departmentRepository.getOne(dept_id);
@@ -130,12 +145,30 @@ public Admin updateAdmin(@RequestBody Admin admin)
 
     ////   //-------------Admin functions with Students-------------------
    @RequestMapping(value = "admin/manage_students/{id}",method =RequestMethod.DELETE)
-    public  String removeStudents(@PathVariable Long dept_id)
+    public  String removeStudents(@PathVariable Long id)
     {
-        Student a = studentRepository.getOne(dept_id);
+        Student a = studentRepository.getOne(id);
         studentRepository.delete(a);
 
         return "Student deleted successfully";
+    }
+
+    //function for admin to get a particular student
+    @RequestMapping(value = "admin/manage_students/{id}",method =RequestMethod.GET)
+    public  Student getStudent(@PathVariable Long id)
+    {
+        Student a = studentRepository.findById(id).get();
+
+
+        return a;
+    }
+
+    //admin to get a list of all studnents
+    @RequestMapping(value = "admin/manage_students",method =RequestMethod.GET)
+    public List<Student> getStudents()
+    {
+        return studentRepository.findAll();
+
     }
  //-----------------------end of Admin Functions with Students----------------------------------
     //

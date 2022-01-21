@@ -23,7 +23,8 @@ public class Student extends cc.chilipo.mw.chilipo_online_exam_system.users.User
     //private @JsonIgnore @Id Long Student_id;
     @OneToOne
     private  Department department;
-    @OneToMany
+    @JsonIgnore
+    @ManyToMany(mappedBy = "enrolled_student")
     private List<Course> courses;
 
     private double gpa;

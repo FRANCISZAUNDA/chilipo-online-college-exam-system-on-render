@@ -25,7 +25,7 @@ public class Exam
    @GeneratedValue(strategy = GenerationType.AUTO)
     protected @JsonIgnore @Id Long Exam_id;
 
-    @Column(unique = true, nullable = false)
+    @Column(nullable = false)
     protected String Exam_name;
 
     @Column(unique = true, nullable = false)
@@ -34,17 +34,17 @@ public class Exam
     @Column(unique = true, nullable = false)
     protected String Question; //unique to avoid repetition
 
-    @Column(unique = true, nullable = false)
+    @Column( nullable = false)
     protected String Option1;
-    @Column(unique = true, nullable = false)
+    @Column( nullable = false)
     protected String Option2;
-    @Column(unique = true, nullable = false)
+    @Column( nullable = false)
     protected String Option3;
-    @Column(unique = true, nullable = false)
+    @Column( nullable = false)
     protected String Option4;
-    @Column(unique = true, nullable = false)
+    @Column(nullable = false)
     protected String Question_answer;
-    @Column(unique = true, nullable = false)
+    @Column( nullable = false)
     protected int Question_marks;
 
 

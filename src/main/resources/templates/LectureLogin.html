@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="Template Mo">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+
+  <title>LectureLogin</title>
+
+  <!------------------------------- Bootstrap core CSS -------------------------------------------->
+  <link th:href="@{/vendor/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+
+
+  <!-- ---------------------------Additional CSS Files------------------------------------------ -->
+  <link rel="stylesheet" th:href="@{/assets/css/fontawesome.css}">
+  <link rel="stylesheet" th:href="@{/assets/css/chilipo_college.css}">
+  <link rel="stylesheet" th:href="@{/assets/css/owl.css}">
+  <link rel="stylesheet" th:href="@{/assets/css/lightbox.css}">
+
+</head>
+
+<body>
+
+
+
+<!-- Sub Header -->
+<div class="sub-header">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-sm-8">
+        <div class="left-content">
+          <p>CHILIPO COLLEGE <em>Lectures lOGIN PAGE</em> </p>
+        </div>
+      </div>
+      <div class="col-lg-4 col-sm-4">
+        <div class="right-icons">
+          <ul>
+            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fa fa-behance"></i></a></li>
+            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ----------------------------------- Header Area Start ----------------------------------------->
+<header class="header-area header-sticky">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <nav class="main-nav">
+          <!-- ------------------------------- Logo Start ------------------------------------------- -->
+          <a href="index.html" class="logo">
+
+            CHILIPO COLLEGE
+          </a>
+          <!-- --------------------------------Logo End ----------------------------------------------- -->
+          <!-- -----------------------------Menu Start ------------------------------------------------- -->
+          <ul class="nav" >
+            <li class="nav-item"><a class="nav-link" href="#" th:href="@{/admin/default}">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#" th:href="@{/Student/Login}">Students</a></li>
+            <li class="nav-item"><a class="nav-link" href="#" th:href="@{/lectures/firstLogin}">Lectures</a></li>
+            <li class="nav-item" ><a class="nav-link" href="#"  th:href="@{/admin/Login}">Admins</a></li>
+            <li  class="nav-item"> <a class = "nav-link" href="#" th:href="@{/chilipo/courses}">courses</a> </li>
+          </ul>
+          <a class="menu-trigger">
+            <span>Menu</span>
+          </a>
+          <!--------------------------------------- Menu End -------------------------------------------->
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>
+<!------------------------------------------ Header Area End --------------------------------------- -->
+
+<section class="heading-page header-text" id="top">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <h6>chilipo college</h6>
+        <h2>please provide email and password to Login</h2>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="register">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-9 align-self-center">
+        <div class="row">
+          <div class="col-lg-12">
+            <form id="registration_form1" th:action="@{/lecture/first_login}" th:object="${lecture}"  method="post">
+              <div class="row">
+                <div class="col-lg-12">
+                  <h2>Lectures  Login to update</h2>
+                </div>
+                <div class="col-lg-6">
+                  <fieldset>
+                    <input name="email" type="text" id="email" pattern="[^ @]*@[^ @]*" placeholder="YOUR EMAIL..." required="">
+                  </fieldset>
+                </div>
+                <div class="col-lg-6">
+                  <fieldset>
+                    <input name="password" type="password" id="password" placeholder="PASSWORD" required="">
+                  </fieldset>
+                </div>
+                <div class="btn-group">
+                  <button type="submit" id="form-submit" class="btn btn-primary">LOGIN  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+<section class="footer" id="p-footer">
+  <div class="footer">
+    <p>Copyright © 2022 Chilipo College Co., Ltd. All Rights Reserved.
+    </p>
+  </div>
+</section>
+
+<!-- -----------------------Scripts ----------------------------------------------->
+<!-- -------------------Bootstrap core JavaScript ------------------------------>
+<script th:src="@{vendor/bootstrap/js/bootstrap.bundle.min.js}"></script>
+
+<script th:src="@{vendor/jquery/jquery.min.js}"></script>
+<script th:src="@{/assets/js/custom.js}"></script>
+
+
+</body>
+</html>

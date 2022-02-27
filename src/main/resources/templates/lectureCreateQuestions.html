@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Template Mo">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+
+    <title>LectureRegisterExamOrFormQuestions</title>
+
+    <!---------------------------- Bootstrap core CSS------------------------------ -->
+    <link th:href="@{/vendor/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+
+
+    <!-- --------------------------Additional CSS Files------------------------------- -->
+    <link rel="stylesheet" th:href="@{/assets/css/fontawesome.css}">
+    <link rel="stylesheet" th:href="@{/assets/css/chilipo_college.css}">
+</head>
+
+<body>
+
+
+
+<!------------------------------------ Sub Header -------------------------------------------->
+<div class="sub-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-sm-8">
+                <div class="left-content">
+                    <p>CHILIPO COLLEGE <em>exams and Questions page</em> </p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-4">
+                <div class="right-icons">
+                    <ul>
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-behance"></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ------------------------------- Header Area Start ---------------------------------- -->
+<header class="header-area header-sticky">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav class="main-nav">
+                    <!-- -------- Logo Start ----------- -->
+                    <a href="index.html" class="logo">
+
+                        CHILIPO COLLEGE
+                    </a>
+                    <!-- ---------- Logo End ------------ -->
+                    <!-- ----------- Menu Start ---------- -->
+                    <ul class="nav" >
+                        <li class="nav-item"><a class="nav-link" href="#" th:href="@{/admin/default}">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#" th:href="@{/Student/Login}">Students</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#" th:href="@{/lectures/firstLogin}">Lectures</a></li>
+                        <li class="nav-item" ><a class="nav-link" href="#"  th:href="@{/admin/Login}">Admins</a></li>
+                        <li  class="nav-item"> <a class = "nav-link" href="#" th:href="@{/chilipo/courses}">courses</a> </li>
+                    </ul>
+                    <a class="menu-trigger">
+                        <span>Menu</span>
+                    </a>
+                    <!--------------------------- Menu End -------------------------------------------- -->
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- ----------------------------------------Header Area End---------------------------------------- -->
+
+<section class="heading-page header-text" id="top">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h6>chilipo college</h6>
+                <h2>FORM QUESTIONS CREATE EXAMS</h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="register">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9 align-self-center">
+                <div class="row">
+                    < class="col-lg-12">
+                        <form id="registration_form1" th:action="@{'/lectures/manage_exams/questions?exam_id='+${Question.exam.exam_id}}" th:object="${Question}" method="post">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <h2>Form Questions</h2>
+                                </div>
+
+                                <div class="col-lg-6">
+                                    <fieldset>
+                                        <input th:field="*{questionasked}" type="text" id="questionasked" placeholder="THE QUESTION" required="">
+                                    </fieldset>
+                                </div>
+                                <div class="col-lg-6">
+                                    <fieldset>
+                                        <input  th:field="*{questionnumber}" type="number" id="questionnumber" placeholder="QUESTION NUMBER " required="">
+                                    </fieldset>
+                                </div>
+                                <div class="col-lg-6">
+                                    <fieldset>
+                                        <input th:field="*{option1}" type="text" id="option1" placeholder="value for choice A " required="">
+                                    </fieldset>
+                                </div>
+                                <div class="col-lg-6">
+                                    <fieldset>
+                                        <input th:field="*{option2}" type="text" id="option2" placeholder="VALUE FOR CHOICE B" required="">
+                                    </fieldset>
+                                </div>
+                                <div class="col-lg-6">
+                                    <fieldset>
+                                        <input th:field="*{option3}"  type="text" id="option3" placeholder="VALUE FOR CHOICE C " required="">
+                                    </fieldset>
+                                </div>
+                                <div class="col-lg-6">
+                                    <fieldset>
+                                        <input th:field="*{option4}" type="text" id="option4" placeholder="VALUE FOR CHOICE D" required="">
+                                    </fieldset>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div id="selectOptionis">
+                                    <fieldset>
+                                        <h6>Question Answer:</h6>
+                                        <select class="w3-container w3-card-4"  th:field="*{question_answer}">
+                                            <option th:value="A" th:text="A"></option>
+                                            <option th:value="B" th:text="B"></option>
+                                            <option th:value="C" th:text="C"></option>
+                                            <option th:value="D" th:text="D"></option>
+                                        </select>
+                                    </fieldset>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <fieldset>
+                                        <input th:field="*{question_marks}" type="number" id="question_marks" placeholder="MARKS FOR THE QUESTION" required="">
+                                    </fieldset>
+                                </div>
+                                <div class="col-lg-12">
+                                    <fieldset>
+                                        <input th:field="*{exam.exam_id}" type="text" id="exam_id" placeholder="enter exam id(only when you want to update/List Questions)" >
+                                    </fieldset>
+                                </div>
+
+                                <div class="btn-group">
+                                    <button type="submit" id="form-submit" class="btn btn-primary">Form Question</button>
+                                    <button type="button" id="btn-6" class="btn btn-primary"><a th:href="@{/getCoursesList}"> Done </a></button>
+
+                                </div>
+                            </div>
+
+                        </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="register" id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9 align-self-center">
+                <div class="row">
+                    <div class="col-lg-12">
+
+                        <form id="registration_form3">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <h2>Having Problems with FORMING (QUESTIONS)? </h2>
+                                </div>
+                                <div class="col-lg-12">
+                                    <fieldset>
+                                        <textarea name="course_name" type="text" class="form-control" id="course_name" placeholder="TO FORM A QUESTION ENTER THE ALL FIELDS THE REQUIRED ANSWER IS THE ANSWER FOR THE QUESTION, ENTER THE REQURED ANSWER AS 'A',OR 'B' ETC THEN SUBMIT FIND ADMIN FOR MORE INFO " required=""></textarea>
+                                    </fieldset>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div></section>
+<section class="footer" id="p-footer">
+    <div class="footer">
+        <p>Copyright © 2022 Chilipo College Co., Ltd. All Rights Reserved.
+        </p>
+    </div>
+</section>
+
+
+<!-------------------------------------- Scripts -->
+<!----------------------------------- Bootstrap core JavaScript -->
+<script th:src="@{vendor/jquery/jquery.min.js}"></script>
+<script th:src="@{vendor/bootstrap/js/bootstrap.bundle.min.js}"></script>
+<script th:src="@{/assets/js/custom.js}"></script>
+
+</body>
+
+</html>

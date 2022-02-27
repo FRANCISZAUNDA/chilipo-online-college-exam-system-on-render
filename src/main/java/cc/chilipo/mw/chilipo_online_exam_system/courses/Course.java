@@ -29,7 +29,7 @@ public class Course
     @ManyToMany
     @JoinTable
             (
-            name="students_enrolled",
+            name="students_courses",
             joinColumns = @JoinColumn(name = "course_id"),
                     inverseJoinColumns = @JoinColumn(name = "student_id")
     )

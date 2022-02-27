@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="TemplateMo">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+
+    <title>Chilipo Online exam system</title>
+
+    <!-- ------------------Bootstrap core CSS ------------------------------>
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <!-- ---------------------Additional CSS Files ---------------------->
+    <link rel="stylesheet" th:href="@{/assets/css/fontawesome.css}">
+    <link rel="stylesheet" th:href="@{/assets/css/chilipo_college.css}">
+    <link rel="stylesheet" th:href="@{/assets/css/owl.css}">
+    <link rel="stylesheet" th:href="@{/assets/css/lightbox.css}">
+
+  </head>
+
+<body>
+
+  <!-- -------------------Sub Header------------------------------------- -->
+  <div class="sub-header">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-sm-8">
+          <div class="left-content">
+            <p>platform for students to write entrance exams.</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-4">
+          <div class="right-icons">
+            <ul>
+              <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+              <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+              <li><a href="#"><i class="fa fa-behance"></i></a></li>
+              <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ----------------------- Header Area Start ---------------------------- -->
+  <header class="header-area header-sticky">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav class="main-nav">
+                    <!-- --------------Logo Start ---------------------------- -->
+                    <a href="index.html" class="logo">
+                      chilipo college online examinations system
+                    </a>
+                    <!-------------- Logo End ------------------------------ -->
+                    <!-- ---------------- Menu Start ---------------------------- -->
+                    <ul class="nav" >
+                        <li class="nav-item"><a class="nav-link" href="#" th:href="@{/admin/default}">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#" th:href="@{/Student/Login}">Students</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#" th:href="@{/lectures/firstLogin}">Lectures</a></li>
+                        <li class="nav-item" ><a class="nav-link" href="#"  th:href="@{/admin/Login}">Admins</a></li>
+                      <li  class="nav-item"> <a class = "nav-link" href="#" th:href="@{/chilipo/courses}">courses</a> </li>
+                    </ul>
+                    <a class="menu-trigger">
+                        <span>Menu</span>
+                    </a>
+                    <!-- ----------------- Menu End --------------------------------- -->
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+  <!---------------------------------- Header Area End --------------------------------------- -->
+
+  <!-- ------------------------------Main Banner Area Start ------------------------------------ -->
+  <section class="section main-banner" id="top" data-section="section1">
+      <video autoplay muted loop id="bg-video">
+          <source src="assets/images/course-video.mp4" type="video/mp4">
+      </video>
+
+      <div class="video-overlay header-text">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="caption">
+              <h6>Hello Students</h6>
+              <h2>Welcome to CHILIPO COLLEGE</h2>
+              <p>This is an online platform that allow users to write entrance exainations.</p>
+              <div class="main-button-red">
+                  <a href="#">register now</a>
+              </div>
+          </div>
+              </div>
+            </div>
+          </div>
+      </div>
+  </section>
+  <!-- --------------------------------- Main Banner Area End ------------------------------------ -->
+
+  <section class="services">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="owl-service-item owl-carousel">
+
+            <a th:href="@{/Student/Login}">
+            <div class="item">
+              <div class="icon">
+                <img src="assets/images/service-icon-01.png" alt="">
+              </div>
+              <div class="down-content">
+                <label>Student</label>
+                <p>writing entrance exams made easy here.</p>
+              </div>
+            </div>
+            </a>
+            
+            <div class="item">
+              <div class="icon">
+                <img src="assets/images/service-icon-02.png" alt="">
+              </div>
+              <div class="down-content">
+                <h4>Are Exams out</h4>
+                <p> check if exams are released here.</p>
+              </div>
+            </div>
+            
+            <div class="item">
+              <div class="icon">
+                <img src="assets/images/service-icon-03.png" alt="">
+              </div>
+              <div class="down-content">
+                <h4>Admins</h4>
+                <p>Login as a an Admin here Admns only.</p>
+              </div>
+            </div>
+            
+            <div class="item">
+              <div class="icon">
+                <img src="assets/images/service-icon-02.png" alt="">
+              </div>
+              <div class="down-content">
+                <h4>courses</h4>
+                <p>check all courses</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+          
+  <section class="our-courses" id="courses">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="section-heading">
+            <h2>Our Popular Courses</h2>
+          </div>
+        </div>
+        <div class="col-lg-12">
+          <div class="owl-courses-item owl-carousel">
+            <div class="item">
+              <img src="assets/images/course-01.jpg" alt="Course One">
+              <div class="down-content">
+                <h4>(Phyzix) Elictricity and magnestsm </h4>
+                <div class="info">
+                  <div class="row">
+                    <div class="col-8">
+                      <ul>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                      </ul>
+                    </div>
+                    <div class="col-4">
+                       <span>$160</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <img src="assets/images/course-02.jpg" alt="Course Two">
+              <div class="down-content">
+                <h4>Object oriented programing</h4>
+                <div class="info">
+                  <div class="row">
+                    <div class="col-8">
+                      <ul>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                      </ul>
+                    </div>
+                    <div class="col-4">
+                       <span>$180</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <img src="assets/images/course-03.jpg" alt="">
+              <div class="down-content">
+                <h4>Edf educational psycology</h4>
+                <div class="info">
+                  <div class="row">
+                    <div class="col-8">
+                      <ul>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                      </ul>
+                    </div>
+                    <div class="col-4">
+                       <span>$40</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <img src="assets/images/course-04.jpg" alt="">
+              <div class="down-content">
+                <h4>Web Design and Develpment</h4>
+                <div class="info">
+                  <div class="row">
+                    <div class="col-8">
+                      <ul>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                      </ul>
+                    </div>
+                    <div class="col-4">
+                       <span>$100</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+  </div></div></div></div></section>
+  <section class="footer" id="p-footer">
+    <div class="footer">
+      <p>Copyright © 2022 Chilipo College Co., Ltd. All Rights Reserved. 
+          </p>
+    </div>
+  </section>
+
+  <!-- --------------------Scripts ---------------------------------------------->
+  <!-- -----------------Bootstrap core JavaScript----------------------------- -->
+  <script th:src="@{/vendor/jquery/jquery.min.js}"></script>
+  <script th:src="@{/vendor/bootstrap/js/bootstrap.bundle.min.js}"></script>
+  <script th:src="@{/assets/js/isotope.min.js}"></script>
+  <script th:src="@{/assets/js/owl-carousel.js}"></script>
+  <script th:src="@{/assets/js/lightbox.js}"></script>
+  <script th:src="@{/assets/js/tabs.js}"></script>
+  <script th:src="@{/assets/js/video.js}"></script>
+  <script th:src="@{/assets/js/slick-slider.js}"></script>
+  <script th:src="@{/assets/js/custom.js}"></script>
+	</script>
+</body>
+</html>

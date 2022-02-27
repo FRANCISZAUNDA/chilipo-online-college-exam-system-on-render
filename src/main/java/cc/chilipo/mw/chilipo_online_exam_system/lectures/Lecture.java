@@ -1,8 +1,6 @@
 package cc.chilipo.mw.chilipo_online_exam_system.lectures;
 
 import cc.chilipo.mw.chilipo_online_exam_system.users.User;
-import cc.chilipo.mw.chilipo_online_exam_system.admin.Admin;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
 import javax.persistence.*;

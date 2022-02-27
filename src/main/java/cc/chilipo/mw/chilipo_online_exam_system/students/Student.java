@@ -27,7 +27,7 @@ public class Student extends cc.chilipo.mw.chilipo_online_exam_system.users.User
     @ManyToMany(mappedBy = "enrolled_student")
     private List<Course> courses;
 
-    private double gpa;
+   //private double gpa;
 
 
 

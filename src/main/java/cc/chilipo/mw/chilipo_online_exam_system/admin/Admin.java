@@ -1,12 +1,9 @@
 package cc.chilipo.mw.chilipo_online_exam_system.admin;
 
 import cc.chilipo.mw.chilipo_online_exam_system.users.User;
-import cc.chilipo.mw.chilipo_online_exam_system.lectures.Lecture;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -24,5 +21,7 @@ public class Admin extends User {
         this.firstname = firstname;
         this.lastname = lastname;
     }
+
+
 
 }

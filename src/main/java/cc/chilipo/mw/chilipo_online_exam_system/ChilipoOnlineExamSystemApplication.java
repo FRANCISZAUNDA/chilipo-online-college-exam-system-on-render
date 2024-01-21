@@ -35,7 +35,7 @@ public class ChilipoOnlineExamSystemApplication implements CommandLineRunner {
 		defaultAdmin.setLastname("thisAdmin");
 		defaultAdmin.setPhoneNumber("099678945");
 		defaultAdmin.setUsername("cantGuessme");
-		defaultAdmin.setEmail("MyAdmin@chilipo>com");
+		defaultAdmin.setEmail("MyAdmin@chilipo.com");
 		defaultAdmin.setPassword("THISWEB");
 		adminRepository.save(defaultAdmin);
 

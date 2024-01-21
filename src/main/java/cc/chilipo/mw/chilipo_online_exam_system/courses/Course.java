@@ -19,8 +19,9 @@ import java.util.List;
 @Table(name = "courses")
 public class Course
 {
-   @GeneratedValue(strategy = GenerationType.AUTO)
-   protected @JsonIgnore @Id Long course_id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    private Long course_id;
 
     @ManyToOne
     @JoinColumn(name = "dept_id")
